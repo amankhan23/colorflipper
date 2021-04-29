@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+    }
+    nav{
+        height: 60px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+    }
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:hover{
+        color: silver;
+    }
+    li{
+        margin-right: 30px;
+    }
+    main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #back{
+        width: 400px;
+        height: 50px;
+        background: black;
+        color: white;
+        margin-bottom: 20px;
+        border: 3px solid white;
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 5px;
+    }
+    button{
+        height: 50px;
+        width: 120px;
+        outline: none;
+        border: 2px solid black;
+        margin-left: 120px;
+        cursor: pointer;
+
+    }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Color Flipper</h4>
+        <ul class="nav-links">
+            <li>
+                <a href="colorFlipper.html">Simple</a>
+            </li>
+            
+            <li>
+                <a href="https://amankhan23.github.io/newdev.github.io/">Stopwatch</a>
+            </li>
+        </ul>
+    </nav>
+<main>
+    <div class="container">
+        <h2 id="back">Background Color: <span class="color"></span></h2>
+        <button class="btn btn-hero" id="btn">Click me </button>
+    </div>
+</main>
+<script>
+    const colors =["green","red","rgba(133,122,200)","#f15025","cyan","#faf000"]
+    const btn = document.getElementById("btn");
+    const color = document.querySelector(".color");
+    btn.addEventListener('click',function(){
+        const randomNumber =getrandomnumber();
+        console.log(randomNumber);
+        document.body.style.backgroundColor = colors[randomNumber];
+        color.textContent = colors[randomNumber];
+    });
+    function getrandomnumber(){
+        return Math.floor(Math.random()*colors.length); 
+    }
+
+</script>
+</body>
+</html>
